@@ -9,10 +9,11 @@ module Ablab
     def track
       exp = experiment(params[:experiment].to_sym)
       Thread.new do
+        args = [params[:group]].compact
         if params[:event] == 'success'
-          exp.track_success!
+          exp.track_success!(*args)
         else
-          exp.track_view!
+          exp.track_view!(*args)
         end
       end
       respond_to do |format|
