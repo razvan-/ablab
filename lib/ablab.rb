@@ -97,11 +97,11 @@ module Ablab
     end
 
     def track_view!(group_name = group)
-      Ablab.tracker.track_view!(experiment.name, group, session_id)
+      Ablab.tracker.track_view!(experiment.name, group_name, session_id)
     end
 
     def track_success!(group_name = group)
-      Ablab.tracker.track_success!(experiment.name, group, session_id)
+      Ablab.tracker.track_success!(experiment.name, group_name, session_id)
     end
 
     def group
